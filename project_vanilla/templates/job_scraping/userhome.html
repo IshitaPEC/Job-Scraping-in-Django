@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "job_scraping/base.html" %}
+
+{% block body %}
+<form method="post" action="">
+  {% csrf_token %}
+      <label for="job_name"><b>Job Name</b></label>
+      <input type="text" placeholder="Enter the job name" name="job_name">
+      <hr>
+
+      <label for="city"><b>City</b></label>
+      <input type="text" placeholder="Enter the city" name="city">
+      <hr>
+
+      <button type="submit" name="button">Find Jobs</button>
+
+  </form>
+{% endblock %}

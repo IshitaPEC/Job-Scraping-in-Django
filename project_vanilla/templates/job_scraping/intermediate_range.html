@@ -1,0 +1,21 @@
+{% extends "job_scraping/base.html" %}
+{% block body %}
+{% if not form_bool %}
+<form method="POST">
+
+{% csrf_token %}
+    <label for="min_salary"><b>MINIMUM SALARY (per month)</b></label>
+    <input type="text" placeholder="Enter the minimum salary" name="min_salary">
+    <hr>
+
+    <label for="max_salary"><b>MAXIMUM SALARY (per month)</b></label>
+    <input type="text" placeholder="Enter the maximum salary" name="max_salary">
+    <hr>
+
+    <button type="submit" name="button">FIND JOBS</button>
+  </form>
+
+{% else %}
+  <a href="{% url 'listofjobs_sorted_in_range' %}" class="btn btn-info" role="button">Open to See Sorted list</a>
+{% endif %}
+{% endblock %}

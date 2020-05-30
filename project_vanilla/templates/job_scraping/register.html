@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends "job_scraping/base.html" %}
+{% block body %}
+
+    {% if registered %}
+      <h2>Thank you for Registering!</h2>
+    {% else %}
+      <form method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        <h1><b>REGISTER</b></h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+      <label for="Username"><b>USERNAME</b></label>
+      {{user_form.username}}
+        <hr>
+
+        <label for="Password"><b>PASSWORD</b></label>
+        {{user_form.password}}
+
+          <hr>
+
+
+      <label for="age"><b>AGE</b></label>
+      <input type="text" placeholder="Enter Age" name="Age" required>
+      <hr>
+
+      <label for="location"><b>LOCATION</b></label>
+      <input type="text" placeholder="Enter Location" name="Location" required>
+      <hr>
+
+      <label for="gender"><b>GENDER</b></label>
+      <select id="Gender" name="Gender">
+          <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Others">Others</option>
+      </select>      <hr>
+
+      <label for="Job_Interests"><b>JOB INTERESTS </b></label>
+      <textarea id="Job_Interests" name="Job_Interests" placeholder="Write something.." style="height:200px"></textarea>
+      <hr>
+
+      <label for="Qualifications"><b>QUALIFICATIONS</b></label>
+      <textarea id="Qualifications" name="Qualifications" placeholder="Write something.." style="height:200px"></textarea>
+      <hr>
+
+          <button type="submit" name="button">REGISTER</button>
+        </form>
+
+    {% endif %}
+{% endblock %}
