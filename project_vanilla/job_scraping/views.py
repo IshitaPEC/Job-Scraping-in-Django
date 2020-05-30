@@ -19,6 +19,7 @@ import pandas as pd
 
 #Login Of a User- We are using django form for login of the user. In Order to authenticate, we use auth_login(request,user)
 # At the same time we are storing the details of the logged in user in a csv file
+#We have a form for the same
 def login(request):
     if request.method=='POST':
         df = pd.DataFrame(columns=('Username', 'Time'))
